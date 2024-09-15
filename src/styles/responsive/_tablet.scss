@@ -64,9 +64,36 @@
       font-size: 25px;
     }
 
+    .search-input {
+      margin-top: 20px;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+    }
+
     #menu-container {
       width: 95%;
+      min-height: calc(100vh - 800px);
       @include grid-container($column-count: 2, $gap: 30px);
+
+      // Not Found
+      .not-found {
+        grid-column: span 3 / span 3;
+        @include flex-container(
+          $direction: column,
+          $align-items: center,
+          $gap: 30px
+        );
+
+        img {
+          width: 150px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+      // End Not Found
     }
   }
   // End Content

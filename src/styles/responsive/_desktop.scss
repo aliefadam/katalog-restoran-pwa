@@ -71,9 +71,35 @@
       font-size: 25px;
     }
 
+    .search-input {
+      margin-top: 20px;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+
     #menu-container {
       width: 80%;
       @include grid-container($column-count: 3, $gap: 30px);
+
+      // Not Found
+      .not-found {
+        grid-column: span 3 / span 3;
+        @include flex-container(
+          $direction: column,
+          $align-items: center,
+          $gap: 30px
+        );
+
+        img {
+          width: 200px;
+        }
+
+        p {
+          font-size: 23px;
+        }
+      }
+      // End Not Found
     }
   }
   // End Content

@@ -82,8 +82,40 @@ const createRestaurantDetailTemplate = (restaurant) => {
   `;
 };
 
+const createRestauranLoadingIndicatorTemplate = () => {
+  let HTML = "";
+  for (let i = 0; i < 6; i++) {
+    HTML += `
+    <div class="menu-item-loading">
+        <div class="menu-image-loading">
+          <div class="image-box-loading"></div>
+          <div class="label-city-loading poppins-medium"><i class="fa-sharp fa-solid fa-location-dot"></i>Surabaya</div>
+        </div>
+        <div class="menu-detail-loading">
+          <p>Rating 4.5 <i class="fa-solid fa-star"></i></p>
+          <h3>Kafe Kita</h3>
+          <p class="poppins-light desc-loading">Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit</p>
+          <a href="#" class="btn-lihat-detail-loading">Lihat Detail</a>
+        </div>
+    </div>
+    `;
+  }
+  return HTML;
+};
+
+const createRestaurantNotFoundTemplate = () => {
+  return `
+  <div class="not-found">
+    <img src="./images/no-results.png">
+    <p>Restoran yang anda cari tidak ditemukan</p>
+  </div>
+  `;
+};
+
 export {
   createHeroSection,
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
+  createRestauranLoadingIndicatorTemplate,
+  createRestaurantNotFoundTemplate,
 };

@@ -3,11 +3,12 @@ import UrlParser from "../routes/url-parser";
 import DrawerInitiator from "../utils/drawer-initiator";
 
 class App {
-  constructor({ button, drawer, content, loadingIndicator }) {
+  constructor({ button, drawer, content, loadingIndicator, searchInput }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
     this._loadingIndicator = loadingIndicator;
+    this._searchInput = searchInput;
 
     this._initialAppShell();
   }

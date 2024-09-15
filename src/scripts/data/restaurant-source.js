@@ -12,6 +12,12 @@ class RestaurantSource {
     const responseJson = await response.json();
     return responseJson.restaurant;
   }
+
+  static async search_restaurant(query) {
+    const response = await fetch(API_ENDPOINT.SEARCH(query));
+    const responseJson = await response.json();
+    return responseJson.restaurants;
+  }
 }
 
 export default RestaurantSource;
