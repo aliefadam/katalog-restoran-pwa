@@ -624,6 +624,7 @@ main#main-content-detail {
         gap: 20px;
 
         button {
+          color: $primary;
           border: 1px solid $primary;
           background-color: transparent;
           border-radius: 5px;
@@ -814,6 +815,7 @@ main#main-content-detail {
       }
 
       button {
+        color: $primary;
         width: 50px;
         height: 45px;
         cursor: pointer;
