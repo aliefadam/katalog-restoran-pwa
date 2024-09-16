@@ -114,10 +114,10 @@
           width: 60%;
         }
       }
+    }
 
-      .main-detail-information {
-        min-height: 40vh;
-      }
+    .extras {
+      @include flex-container($gap: 30px, $direction: row);
     }
 
     // Main Detail Loading
@@ -128,12 +128,33 @@
         width: 65%;
         padding-block: 150px;
       }
-
-      .main-detail-information-loading {
-        min-height: 40vh;
-      }
     }
     // End Main Detail Loading
   }
   // End Content Detail
+
+  // Add Review
+  #overlay-add-review {
+    .box-add-review {
+      width: 70%;
+      background-color: $quarternary;
+
+      &-header {
+        padding: 15px 30px;
+      }
+
+      &-body {
+        padding: 25px 30px;
+
+        form {
+          .form-action {
+            button {
+              width: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // End Add Review
 }

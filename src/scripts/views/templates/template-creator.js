@@ -116,7 +116,9 @@ const createRestaurantDetailTemplate = (restaurant) => {
         <h3><i class="fa-regular fa-users"></i> Ulasan Pelanggan</h3>
       </div>
       <div class="review-body">
-        <button id="add-review">Berikan Ulasan</button>
+        <button data-restaurant-id="${
+          restaurant.id
+        }" id="add-review"><i class="fa-regular fa-comment-plus"></i> Berikan Ulasan</button>
         ${restaurant.customerReviews
           .map(({ name, review, date }) => {
             return `
@@ -191,6 +193,51 @@ const createRestaurantDetailLoadingIndicatorTemplate = () => {
       </div>
     </div>
   </section>
+
+  <div class="extras">
+    <div class="menu">
+      <div class="menu-header">
+        <h3><i class="fa-regular fa-pot-food"></i> Menu yang tersedia</h3>
+      </div>
+      <div class="menu-body">
+          <h4>Makanan :</h4>
+          <div class="menu-body-list-loading">
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+          </div>
+          <h4>Minuman :</h4>
+          <div class="menu-body-list-loading">
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+            <span>asd</span>
+          </div>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-header">
+        <h3><i class="fa-regular fa-users"></i> Ulasan Pelanggan</h3>
+      </div>
+      <div class="review-body">
+        <button id="add-review"><i class="fa-regular fa-comment-plus"></i> Berikan Ulasan</button>
+        <div class="review-body-item-loading">
+            <div class="review-body-item-loading-header">
+              <h4>Johan</h4>
+              <span>20 September 2024</span>
+            </div>
+            <div class="review-body-item-loading-body">
+              <p>Mantap Men!!</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
   `;
 };
 
@@ -209,12 +256,12 @@ const createAddReviewTemplate = () => {
     <div class="box-add-review">
       <div class="box-add-review-header">
         <h1>Berikan Ulasan</h1>
-        <button id="btn-close-add-review">
+        <button id="btn-close-add-review" aria-label="Tombol Tutup Berikan Ulasan">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
       <div class="box-add-review-body">
-        <form action="">
+        <form action="" id="add-review-form">
           <div class="form-group">
             <label for="nama">Nama Anda</label>
             <input required type="text" id="nama">

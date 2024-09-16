@@ -142,9 +142,21 @@
       }
     }
 
+    .extras {
+      margin-top: 50px;
+      @include flex-container($gap: 30px);
+
+      .menu {
+        &-body {
+          &-list {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      }
+    }
+
     // Main Detail Loading
     #main-detail-loading {
-      margin-top: 40px;
       @include flex-container($gap: 30px);
 
       .main-detail-image-loading {
@@ -160,6 +172,31 @@
     // End Main Detail Loading
   }
   // End Content Detail
+
+  // Add Review
+  #overlay-add-review {
+    .box-add-review {
+      width: 50%;
+      background-color: $quarternary;
+
+      &-header {
+        padding: 15px 30px;
+      }
+
+      &-body {
+        padding: 25px 30px;
+
+        form {
+          .form-action {
+            button {
+              width: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // End Add Review
 
   // Footer
   footer {

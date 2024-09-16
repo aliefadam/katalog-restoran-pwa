@@ -21,18 +21,27 @@ const Detail = {
       overlay: document.getElementById("overlay-add-review"),
       box: document.querySelector(".box-add-review"),
       btnClose: document.getElementById("btn-close-add-review"),
+      form: document.getElementById("add-review-form"),
+      content: document.getElementById("main-content-detail"),
     });
 
+    this._showLoading();
+    this._afterLoading();
+  },
+
+  _showLoading() {
     document.getElementById("main-content-detail").innerHTML =
       createRestaurantDetailLoadingIndicatorTemplate();
+  },
 
+  _afterLoading() {
     setTimeout(async () => {
       const id = UrlParser.parseActiveUrlWithoutCombiner().id;
       await RestaurantSource.detail_restaurant(id).then((restaurant) => {
         document.getElementById("main-content-detail").innerHTML =
           createRestaurantDetailTemplate(restaurant);
       });
-    }, 0);
+    }, 500);
   },
 };
 
