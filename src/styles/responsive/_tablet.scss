@@ -119,6 +119,21 @@
         min-height: 40vh;
       }
     }
+
+    // Main Detail Loading
+    #main-detail-loading {
+      margin-top: 30px;
+
+      .main-detail-image-loading {
+        width: 65%;
+        padding-block: 150px;
+      }
+
+      .main-detail-information-loading {
+        min-height: 40vh;
+      }
+    }
+    // End Main Detail Loading
   }
   // End Content Detail
 }

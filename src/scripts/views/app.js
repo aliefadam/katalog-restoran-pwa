@@ -3,12 +3,11 @@ import UrlParser from "../routes/url-parser";
 import DrawerInitiator from "../utils/drawer-initiator";
 
 class App {
-  constructor({ button, drawer, content, loadingIndicator, searchInput }) {
+  constructor({ button, drawer, content, loadingIndicator }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
     this._loadingIndicator = loadingIndicator;
-    this._searchInput = searchInput;
 
     this._initialAppShell();
   }
@@ -29,6 +28,10 @@ class App {
   }
 
   async renderPage() {
+    window.scrollTo({
+      top: 0,
+    });
+
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

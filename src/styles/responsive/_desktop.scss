@@ -141,6 +141,23 @@
         }
       }
     }
+
+    // Main Detail Loading
+    #main-detail-loading {
+      margin-top: 40px;
+      @include flex-container($gap: 30px);
+
+      .main-detail-image-loading {
+        height: 300px;
+      }
+
+      .main-detail-information-loading {
+        .description-loading {
+          margin-top: 20px;
+        }
+      }
+    }
+    // End Main Detail Loading
   }
   // End Content Detail
 

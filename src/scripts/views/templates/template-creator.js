@@ -66,9 +66,16 @@ const createRestaurantDetailTemplate = (restaurant) => {
     </div>
     <div class="main-detail-information">
       <h2 class="restaurant-name">${restaurant.name}</h2>
+      <div class="categories">
+        ${restaurant.categories
+          .map((category, i) => {
+            return `<span>${category.name}</span>`;
+          })
+          .join("")}
+      </div>
       <div class="location">
         <i class="fa-regular fa-location-dot"></i>
-        <span>${restaurant.city}</span>
+        <span>${restaurant.address}, ${restaurant.city}</span>
       </div>
       <div class="rating">
         <i class="fa-regular fa-star"></i>
@@ -79,6 +86,55 @@ const createRestaurantDetailTemplate = (restaurant) => {
       </div>
     </div>
   </section>
+
+  <div class="extras">
+    <div class="menu">
+      <div class="menu-header">
+        <h3><i class="fa-regular fa-pot-food"></i> Menu yang tersedia</h3>
+      </div>
+      <div class="menu-body">
+          <h4>Makanan :</h4>
+          <div class="menu-body-list">
+            ${restaurant.menus.foods
+              .map(({ name }) => {
+                return `<span>${name}</span>`;
+              })
+              .join("")}
+          </div>
+          <h4>Minuman :</h4>
+          <div class="menu-body-list">
+            ${restaurant.menus.drinks
+              .map(({ name }) => {
+                return `<span>${name}</span>`;
+              })
+              .join("")}
+          </div>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-header">
+        <h3><i class="fa-regular fa-users"></i> Ulasan Pelanggan</h3>
+      </div>
+      <div class="review-body">
+        <button id="add-review">Berikan Ulasan</button>
+        ${restaurant.customerReviews
+          .map(({ name, review, date }) => {
+            return `
+              <div class="review-body-item">
+                <div class="review-body-item-header">
+                  <h4>${name}</h4>
+                  <span>${date}</span>
+                </div>
+                <div class="review-body-item-body">
+                  <p>${review}</p>
+                </div>
+              </div>
+              `;
+          })
+          .join("")}
+      </div>
+    </div>
+  </div>
   `;
 };
 
@@ -103,11 +159,76 @@ const createRestauranLoadingIndicatorTemplate = () => {
   return HTML;
 };
 
+const createRestaurantDetailLoadingIndicatorTemplate = () => {
+  return `
+  <div class="bread-crumb">
+    <a href="#/" class="bread-crumb-item poppins-medium">
+      <i class="fa-regular fa-house"></i>
+      <span>Home</span>
+    </a>
+    <i class="fa-regular fa-angle-right splitter"></i>
+    <a href="#" class="bread-crumb-item active poppins-medium">
+      <span>Detail Restoran : Kafe Kita</span>
+    </a>
+  </div>
+
+  <section id="main-detail-loading">
+    <div class="main-detail-image-loading"></div>
+    <div class="main-detail-information-loading">
+      <h2 class="restaurant-name-loading">Kafe Kita</h2>
+      <div class="location-loading">
+        <i class="fa-regular fa-location-dot"></i>
+        <span>Surabaya</span>
+      </div>
+      <div class="rating-loading">
+        <i class="fa-regular fa-star"></i>
+        <span>Rating 5</span>
+      </div>
+      <div class="description-loading">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quam magnam dolor. Ipsa, magni! Tenetur ratione delectus magni optio odit, laudantium laboriosam exercitationem, quia sint ipsa a, illum iste dolorum fugit ut eos! Nobis, numquam? Explicabo ratione dolores debitis veniam optio sequi laborum voluptatibus laudantium. Veritatis voluptas nulla, perspiciatis magnam harum delectus molestiae animi culpa. Nostrum corrupti deleniti voluptatum quas atque illum amet earum, iusto unde velit beatae debitis culpa consectetur saepe, odio quo eum, nam quis tempore rem odit. In suscipit libero ullam incidunt ipsum, rem ipsa, commodi totam corporis accusantium sequi quisquam reiciendis tenetur unde, praesentium id repellat.
+        </p>
+      </div>
+    </div>
+  </section>
+  `;
+};
+
 const createRestaurantNotFoundTemplate = () => {
   return `
   <div class="not-found">
     <img src="./images/no-results.png">
     <p>Restoran yang anda cari tidak ditemukan</p>
+  </div>
+  `;
+};
+
+const createAddReviewTemplate = () => {
+  return `
+  <div id="overlay-add-review">
+    <div class="box-add-review">
+      <div class="box-add-review-header">
+        <h1>Berikan Ulasan</h1>
+        <button id="btn-close-add-review">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="box-add-review-body">
+        <form action="">
+          <div class="form-group">
+            <label for="nama">Nama Anda</label>
+            <input required type="text" id="nama">
+          </div>
+          <div class="form-group">
+            <label for="ulasan">Ulasan</label>
+            <textarea required id="ulasan"></textarea>
+          </div>
+          <div class="form-action">
+            <button type="submit">Kirim</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
   `;
 };
@@ -118,4 +239,6 @@ export {
   createRestaurantDetailTemplate,
   createRestauranLoadingIndicatorTemplate,
   createRestaurantNotFoundTemplate,
+  createRestaurantDetailLoadingIndicatorTemplate,
+  createAddReviewTemplate,
 };
