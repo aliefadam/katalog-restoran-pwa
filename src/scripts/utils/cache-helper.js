@@ -1,19 +1,19 @@
-import CONFIG from "../global/config";
+import CONFIG from '../global/config';
 
 const CacheHelper = {
-  async cachingAppShell(requests) {
+  async cachingAppShell (requests) {
     const cache = await this._openCache();
     cache.addAll(requests);
   },
 
-  async deleteOldCache() {
+  async deleteOldCache () {
     const cacheNames = await caches.keys();
     cacheNames
       .filter((name) => name !== CONFIG.CACHE_NAME)
       .map((filteredName) => caches.delete(filteredName));
   },
 
-  async revalidateCache(request) {
+  async revalidateCache (request) {
     const response = await caches.match(request);
 
     if (response) {
@@ -23,11 +23,11 @@ const CacheHelper = {
     return this._fetchRequest(request);
   },
 
-  async _openCache() {
+  async _openCache () {
     return caches.open(CONFIG.CACHE_NAME);
   },
 
-  async _fetchRequest(request) {
+  async _fetchRequest (request) {
     const response = await fetch(request);
 
     if (!response || response.status !== 200) {
@@ -38,10 +38,10 @@ const CacheHelper = {
     return response;
   },
 
-  async _addCache(request) {
+  async _addCache (request) {
     const cache = await this._openCache();
     cache.add(request);
-  },
+  }
 };
 
 export default CacheHelper;
