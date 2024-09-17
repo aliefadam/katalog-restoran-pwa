@@ -1,0 +1,18 @@
+{
+  "id": "katalog-restoran-pwa",
+  "start_url": "./index.html",
+  "name": "Katalog Restoran PWA",
+  "short_name": "Katalog Restoran",
+  "description": "Katalog Restoran Gratis Untuk Semua",
+  "display": "standalone",
+  "background_color": "#1e201e",
+  "theme_color": "#1e201e",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
