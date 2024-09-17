@@ -198,6 +198,49 @@
   }
   // End Add Review
 
+  // Main Content Favorite
+  main#main-content-favorite {
+    padding: 30px;
+
+    .bread-crumb {
+      margin-top: -10px;
+
+      a {
+        height: 45px;
+      }
+    }
+
+    .bread-crumb {
+      a {
+        font-size: 15px;
+        transition: 200ms;
+
+        &.active {
+          color: lighten($color: $primary, $amount: 30%);
+        }
+      }
+
+      .splitter {
+        font-size: 15px;
+      }
+    }
+
+    #main-favorite {
+      margin-top: 40px;
+
+      h1 {
+        font-size: 35px;
+      }
+
+      &-list {
+        width: 80%;
+        margin-top: 40px;
+        @include grid-container($column-count: 3, $gap: 30px);
+      }
+    }
+  }
+  // End Main Content Favorite
+
   // Footer
   footer {
     font-size: 16px;

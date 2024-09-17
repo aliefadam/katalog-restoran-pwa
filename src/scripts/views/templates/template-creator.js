@@ -55,7 +55,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
       <span>Home</span>
     </a>
     <i class="fa-regular fa-angle-right splitter"></i>
-    <a href="#" class="bread-crumb-item active poppins-medium">
+    <a href="javascript:void(0)" class="bread-crumb-item active poppins-medium">
       <span>Detail Restoran : ${restaurant.name}</span>
     </a>
   </div>
@@ -250,6 +250,34 @@ const createRestaurantNotFoundTemplate = () => {
   `;
 };
 
+const createRestaurantFavoriteTemplate = (restaurant) => {
+  return `
+    <div class="menu-item" data-restauran-id="${restaurant.id}">
+        <div class="menu-image">
+        <img
+            src="${CONFIG.BASE_IMAGE_URL(restaurant.pictureId)}"
+            alt="Gambar Restoran ${restaurant.name}"
+        />
+        <div class="label-city poppins-medium"><i class="fa-sharp fa-solid fa-location-dot"></i>${
+          restaurant.city
+        }</div>
+        </div>
+        <div class="menu-detail">
+        <p>Rating ${restaurant.rating} <i class="fa-solid fa-star"></i></p>
+        <h3>${restaurant.name}</h3>
+        <p class="poppins-light desc">${restaurant.description
+          .toString()
+          .substring(0, 90)}...</p>
+        <a href="#/detail/${
+          restaurant.id
+        }" class="btn-lihat-detail" data-restaurant-id="${
+    restaurant.id
+  }">Lihat Detail</a>
+        </div>
+    </div>
+  `;
+};
+
 const createAddReviewTemplate = () => {
   return `
   <div id="overlay-add-review">
@@ -296,6 +324,21 @@ const createLikedButtonTemplate = () => {
   `;
 };
 
+const createBreadCrum = () => {
+  return `
+  <div class="bread-crumb">
+    <a href="#/" class="bread-crumb-item poppins-medium">
+      <i class="fa-regular fa-house"></i>
+      <span>Home</span>
+    </a>
+    <i class="fa-regular fa-angle-right splitter"></i>
+    <a href="javascript:void(0)" class="bread-crumb-item active poppins-medium">
+      <span>Restoran Favorite</span>
+    </a>
+  </div>
+  `;
+};
+
 export {
   createHeroSection,
   createRestaurantItemTemplate,
@@ -306,4 +349,6 @@ export {
   createAddReviewTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createRestaurantFavoriteTemplate,
+  createBreadCrum,
 };

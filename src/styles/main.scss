@@ -934,6 +934,236 @@ main#main-content-detail {
 }
 // End Add Review
 
+// Main Content Favorite
+main#main-content-favorite {
+  margin-top: 70px;
+  padding: 20px;
+
+  .bread-crumb {
+    margin-top: 0;
+    margin-bottom: -20px;
+    @include flex-container($align-items: center, $gap: 8px);
+    flex-wrap: wrap;
+
+    a {
+      @include flex-container($align-items: center, $gap: 5px);
+      color: $primary;
+      font-size: 12px;
+      transition: 200ms;
+
+      &:not(.active):hover {
+        color: darken($color: $primary, $amount: 10%);
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        color: lighten($color: $primary, $amount: 30%);
+        cursor: default;
+      }
+    }
+
+    .splitter {
+      font-size: 13px;
+      transform: translateY(1px);
+    }
+  }
+
+  #main-favorite {
+    margin-top: 50px;
+
+    h1 {
+      font-size: 25px;
+      text-align: center;
+    }
+
+    &-list {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 40px;
+      @include grid-container($column-count: 1, $gap: 30px);
+      min-height: 60vh;
+
+      .menu-item {
+        background-color: $secondary;
+        padding: 20px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        transition: 300ms;
+
+        &:hover {
+          transform: scale(102%);
+        }
+
+        .menu-image {
+          position: relative;
+          height: 250px;
+
+          img {
+            border: 3px solid $quarternary;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+
+          .label-city {
+            background-color: $quarternary;
+            @include flex-container($align-items: center, $gap: 5px);
+            @include not-static-position(
+              $position: absolute,
+              $top: 20px,
+              $left: 20px
+            );
+            border-radius: 5px;
+            padding: 8px 10px;
+            font-size: 14px;
+            color: $primary;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+
+      .menu-detail {
+        color: $quarternary;
+        margin-top: 15px;
+
+        p:first-child {
+          @include flex-container($align-items: center, $gap: 5px);
+          i {
+            font-size: 13px;
+            color: rgb(255, 157, 0);
+          }
+        }
+
+        h3 {
+          margin-top: 15px;
+        }
+
+        p.desc {
+          margin-top: 5px;
+          line-height: 20px;
+          font-size: 15px;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 45px;
+          margin-top: 15px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          background-color: $primary;
+          color: $quarternary;
+          transition: 200ms;
+
+          &:hover {
+            background-color: darken($primary, 10%);
+          }
+        }
+      }
+
+      // Loading Indicator
+      .menu-item-loading {
+        background-color: rgb(229 231 235);
+        padding: 20px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        transition: 300ms;
+
+        &:hover {
+          transform: scale(102%);
+        }
+
+        .menu-image-loading {
+          animation: $animate-pulse;
+          position: relative;
+          height: 250px;
+
+          .image-box-loading {
+            border-radius: 12px;
+            background-color: rgb(209 213 219);
+            width: 100%;
+            height: 100%;
+          }
+
+          .label-city-loading {
+            color: transparent !important;
+            background-color: rgb(156 163 175);
+            @include flex-container($align-items: center, $gap: 5px);
+            @include not-static-position(
+              $position: absolute,
+              $top: 20px,
+              $left: 20px
+            );
+            border-radius: 5px;
+            padding: 8px 10px;
+            font-size: 14px;
+            color: $primary;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+
+      .menu-detail-loading {
+        animation: $animate-pulse;
+        color: $quarternary;
+        margin-top: 15px;
+
+        p:first-child {
+          width: fit-content;
+          padding-block: 5px;
+          background-color: rgb(209 213 219);
+          color: transparent;
+          @include flex-container($align-items: center, $gap: 5px);
+          i {
+            font-size: 13px;
+            color: transparent;
+          }
+        }
+
+        h3 {
+          width: 50%;
+          margin-top: 15px;
+          background-color: rgb(209 213 219);
+          color: transparent;
+          padding-block: 3px;
+        }
+
+        p.desc-loading {
+          margin-top: 10px;
+          line-height: 20px;
+          font-size: 15px;
+          background-color: rgb(209 213 219);
+          color: transparent;
+          padding-block: 3px;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 45px;
+          margin-top: 15px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          background-color: rgb(156 163 175);
+          color: transparent;
+          transition: 200ms;
+        }
+      }
+      // End Loading Indicator
+    }
+  }
+}
+// End Main Content Favorite
+
 // Footer
 footer {
   margin-top: 30px;

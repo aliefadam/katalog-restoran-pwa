@@ -157,4 +157,28 @@
     }
   }
   // End Add Review
+
+  // Main Content Favorite
+  main#main-content-favorite {
+    padding: 30px;
+
+    .bread-crumb {
+      margin-bottom: 5px;
+    }
+
+    #main-favorite {
+      margin-top: 40px;
+
+      h1 {
+        font-size: 35px;
+      }
+
+      &-list {
+        width: 95%;
+        min-height: calc(100vh - 300px);
+        @include grid-container($column-count: 2, $gap: 30px);
+      }
+    }
+  }
+  // End Main Content Favorite
 }
