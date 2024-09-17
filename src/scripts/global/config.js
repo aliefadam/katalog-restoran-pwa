@@ -1,11 +1,11 @@
 const CONFIG = {
-  KEY: "TESTING",
-  BASE_URL: "https://restaurant-api.dicoding.dev",
+  KEY: 'TESTING',
+  BASE_URL: 'https://restaurant-api.dicoding.dev',
   BASE_IMAGE_URL: (id) =>
     `https://restaurant-api.dicoding.dev/images/large/${id}`,
-  DATABASE_NAME: `restaurant_catalouge-database`,
+  DATABASE_NAME: 'restaurant_catalouge-database',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: "restaurant",
+  OBJECT_STORE_NAME: 'restaurant'
 };
 
 export default CONFIG;

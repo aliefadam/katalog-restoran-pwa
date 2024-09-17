@@ -1,9 +1,9 @@
-import routes from "../routes/routes";
-import UrlParser from "../routes/url-parser";
-import DrawerInitiator from "../utils/drawer-initiator";
+import routes from '../routes/routes';
+import UrlParser from '../routes/url-parser';
+import DrawerInitiator from '../utils/drawer-initiator';
 
 class App {
-  constructor({ button, drawer, content, loadingIndicator }) {
+  constructor ({ button, drawer, content, loadingIndicator }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
@@ -12,24 +12,24 @@ class App {
     this._initialAppShell();
   }
 
-  _initialAppShell() {
+  _initialAppShell () {
     DrawerInitiator.init({
       button: this._button,
-      drawer: this._drawer,
+      drawer: this._drawer
     });
   }
 
-  showLoadingIndicator() {
-    this._loadingIndicator.style.display = "initial";
+  showLoadingIndicator () {
+    this._loadingIndicator.style.display = 'initial';
   }
 
-  hideLoadingIndicator() {
-    this._loadingIndicator.style.display = "none";
+  hideLoadingIndicator () {
+    this._loadingIndicator.style.display = 'none';
   }
 
-  async renderPage() {
+  async renderPage () {
     window.scrollTo({
-      top: 0,
+      top: 0
     });
 
     const url = UrlParser.parseActiveUrlWithCombiner();
