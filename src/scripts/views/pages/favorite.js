@@ -1,6 +1,7 @@
 import FavoritRestaurantIDB from "../../data/favorite-restaurant-idb";
 import {
   createBreadCrum,
+  createEmptyFavoriteRestaurantTemplate,
   createRestauranLoadingIndicatorTemplate,
   createRestaurantFavoriteTemplate,
   createRestaurantItemTemplate,
@@ -31,10 +32,15 @@ const Favorite = {
     setTimeout(async () => {
       document.getElementById("main-favorite-list").innerHTML = "";
       await FavoritRestaurantIDB.getAllRestaurant().then((restaurants) => {
-        restaurants.forEach((restaurant) => {
-          document.getElementById("main-favorite-list").innerHTML +=
-            createRestaurantFavoriteTemplate(restaurant);
-        });
+        if (restaurants.length == 0) {
+          document.getElementById("main-favorite-list").innerHTML =
+            createEmptyFavoriteRestaurantTemplate();
+        } else {
+          restaurants.forEach((restaurant) => {
+            document.getElementById("main-favorite-list").innerHTML +=
+              createRestaurantFavoriteTemplate(restaurant);
+          });
+        }
       });
     }, 500);
   },

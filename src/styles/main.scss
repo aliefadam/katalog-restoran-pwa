@@ -298,7 +298,9 @@ main#main-content {
 
     // Loading Indicator
     .menu-item-loading {
-      background-color: rgb(229 231 235);
+      // background-color: $secondary;
+      // background-color: rgb(229 231 235);
+      background-color: lighten($secondary, 10%);
       padding: 20px;
       border-radius: 15px;
       overflow: hidden;
@@ -316,14 +318,18 @@ main#main-content {
 
         .image-box-loading {
           border-radius: 12px;
-          background-color: rgb(209 213 219);
+          // background-color: rgb(209 213 219);
+          // background-color: darken($color: $secondary, $amount: 10%);
+          background-color: $secondary;
           width: 100%;
           height: 100%;
         }
 
         .label-city-loading {
           color: transparent !important;
-          background-color: rgb(156 163 175);
+          // background-color: rgb(156 163 175);
+          // background-color: darken($color: $secondary, $amount: 20%);
+          background-color: $quarternary;
           @include flex-container($align-items: center, $gap: 5px);
           @include not-static-position(
             $position: absolute,
@@ -347,7 +353,8 @@ main#main-content {
       p:first-child {
         width: fit-content;
         padding-block: 5px;
-        background-color: rgb(209 213 219);
+        // background-color: rgb(209 213 219);
+        background-color: $secondary;
         color: transparent;
         @include flex-container($align-items: center, $gap: 5px);
         i {
@@ -359,7 +366,8 @@ main#main-content {
       h3 {
         width: 50%;
         margin-top: 15px;
-        background-color: rgb(209 213 219);
+        // background-color: rgb(209 213 219);
+        background-color: $secondary;
         color: transparent;
         padding-block: 3px;
       }
@@ -368,7 +376,8 @@ main#main-content {
         margin-top: 10px;
         line-height: 20px;
         font-size: 15px;
-        background-color: rgb(209 213 219);
+        // background-color: rgb(209 213 219);
+        background-color: $secondary;
         color: transparent;
         padding-block: 3px;
       }
@@ -384,6 +393,7 @@ main#main-content {
         border: none;
         cursor: pointer;
         background-color: rgb(156 163 175);
+        background-color: darken($color: $secondary, $amount: 10%);
         color: transparent;
         transition: 200ms;
       }
@@ -584,7 +594,8 @@ main#main-content-detail {
 
           span {
             animation: $animate-pulse;
-            background-color: rgb(209 213 219);
+            // background-color: rgb(209 213 219);
+            background-color: lighten($color: $primary, $amount: 10%);
             border: none;
             color: transparent;
             text-align: center;
@@ -690,12 +701,16 @@ main#main-content-detail {
             h4 {
               font-size: 16px;
               font-weight: 600;
-              background-color: rgb(209 213 219);
+              // background-color: rgb(209 213 219);
+              animation: $animate-pulse;
+              background-color: lighten($color: $primary, $amount: 10%);
               color: transparent;
             }
 
             span {
-              background-color: rgb(209 213 219);
+              animation: $animate-pulse;
+              background-color: lighten($color: $primary, $amount: 10%);
+              // background-color: rgb(209 213 219);
               color: transparent;
               font-weight: 500;
               font-size: 13px;
@@ -706,7 +721,9 @@ main#main-content-detail {
             margin-top: 5px;
 
             p {
-              background-color: rgb(209 213 219);
+              // background-color: rgb(209 213 219);
+              animation: $animate-pulse;
+              background-color: lighten($color: $primary, $amount: 10%);
               color: transparent;
               font-size: 15px;
               line-height: 20px;
@@ -726,7 +743,8 @@ main#main-content-detail {
     .main-detail-image-loading {
       width: 100%;
       animation: $animate-pulse;
-      background-color: rgb(209 213 219);
+      // background-color: rgb(209 213 219);
+      background-color: lighten($color: $primary, $amount: 10%);
       border-radius: 15px;
       flex: 1;
       padding-block: 100px;
@@ -738,7 +756,8 @@ main#main-content-detail {
       h2 {
         width: 50%;
         animation: $animate-pulse;
-        background-color: rgb(209 213 219);
+        // background-color: rgb(209 213 219);
+        background-color: lighten($color: $primary, $amount: 10%);
         color: transparent;
         font-size: 30px;
       }
@@ -752,7 +771,8 @@ main#main-content-detail {
         font-weight: 500;
         width: fit-content;
         animation: $animate-pulse;
-        background-color: rgb(209 213 219);
+        // background-color: rgb(209 213 219);
+        background-color: lighten($color: $primary, $amount: 10%);
         color: transparent;
 
         i {
@@ -766,7 +786,8 @@ main#main-content-detail {
 
       .description-loading {
         animation: $animate-pulse;
-        background-color: rgb(209 213 219);
+        // background-color: rgb(209 213 219);
+        background-color: lighten($color: $primary, $amount: 10%);
         color: transparent;
         margin-top: 15px;
 
@@ -1068,7 +1089,8 @@ main#main-content-favorite {
 
       // Loading Indicator
       .menu-item-loading {
-        background-color: rgb(229 231 235);
+        // background-color: rgb(229 231 235);
+        background-color: lighten($secondary, 10%);
         padding: 20px;
         border-radius: 15px;
         overflow: hidden;
@@ -1086,14 +1108,16 @@ main#main-content-favorite {
 
           .image-box-loading {
             border-radius: 12px;
-            background-color: rgb(209 213 219);
+            background-color: $secondary;
+            // background-color: rgb(209 213 219);
             width: 100%;
             height: 100%;
           }
 
           .label-city-loading {
             color: transparent !important;
-            background-color: rgb(156 163 175);
+            // background-color: rgb(156 163 175);
+            background-color: lighten($quarternary, 5);
             @include flex-container($align-items: center, $gap: 5px);
             @include not-static-position(
               $position: absolute,
@@ -1117,7 +1141,8 @@ main#main-content-favorite {
         p:first-child {
           width: fit-content;
           padding-block: 5px;
-          background-color: rgb(209 213 219);
+          // background-color: rgb(209 213 219);
+          background-color: $secondary;
           color: transparent;
           @include flex-container($align-items: center, $gap: 5px);
           i {
@@ -1129,7 +1154,8 @@ main#main-content-favorite {
         h3 {
           width: 50%;
           margin-top: 15px;
-          background-color: rgb(209 213 219);
+          // background-color: rgb(209 213 219);
+          background-color: $secondary;
           color: transparent;
           padding-block: 3px;
         }
@@ -1138,7 +1164,8 @@ main#main-content-favorite {
           margin-top: 10px;
           line-height: 20px;
           font-size: 15px;
-          background-color: rgb(209 213 219);
+          // background-color: rgb(209 213 219);
+          background-color: $secondary;
           color: transparent;
           padding-block: 3px;
         }
@@ -1153,13 +1180,36 @@ main#main-content-favorite {
           border-radius: 5px;
           border: none;
           cursor: pointer;
-          background-color: rgb(156 163 175);
+          // background-color: rgb(156 163 175);
+          background-color: darken($secondary, 10%);
           color: transparent;
           transition: 200ms;
         }
       }
       // End Loading Indicator
     }
+
+    // Empty Favorite Restaurant
+    .empty-favorite-restaurant {
+      margin-top: 20px;
+      @include flex-container(
+        $direction: column,
+        $align-items: center,
+        $gap: 20px
+      );
+
+      img {
+        width: 100px;
+      }
+
+      p {
+        color: $primary;
+        text-align: center;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+    // End Empty Favorite Restaurant
   }
 }
 // End Main Content Favorite

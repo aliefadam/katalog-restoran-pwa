@@ -237,6 +237,25 @@
         margin-top: 40px;
         @include grid-container($column-count: 3, $gap: 30px);
       }
+
+      // Empty Favorite Restaurant
+      .empty-favorite-restaurant {
+        grid-column: span 3 / span 3;
+        @include flex-container(
+          $direction: column,
+          $align-items: center,
+          $gap: 30px
+        );
+
+        img {
+          width: 200px;
+        }
+
+        p {
+          font-size: 23px;
+        }
+      }
+      // End Empty Favorite Restaurant
     }
   }
   // End Main Content Favorite

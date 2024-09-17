@@ -250,6 +250,15 @@ const createRestaurantNotFoundTemplate = () => {
   `;
 };
 
+const createEmptyFavoriteRestaurantTemplate = () => {
+  return `
+  <div class="empty-favorite-restaurant">
+    <img src="./images/sad-heart.png">
+    <p>Belum ada restoran yang ditambahkan ke favorit</p>
+  </div>
+  `;
+};
+
 const createRestaurantFavoriteTemplate = (restaurant) => {
   return `
     <div class="menu-item" data-restauran-id="${restaurant.id}">
@@ -351,4 +360,5 @@ export {
   createLikedButtonTemplate,
   createRestaurantFavoriteTemplate,
   createBreadCrum,
+  createEmptyFavoriteRestaurantTemplate,
 };
