@@ -10,7 +10,7 @@ class RestaurantSource {
     } catch (e) {
       Notification.showNotification({
         title: 'Error',
-        text: e,
+        text: 'Gagal Memuat!, coba periksa koneksi internet anda',
         icon: 'error'
       });
     }
@@ -24,7 +24,7 @@ class RestaurantSource {
     } catch (e) {
       Notification.showNotification({
         title: 'Error',
-        text: e,
+        text: 'Gagal Memuat!, coba periksa koneksi internet anda',
         icon: 'error'
       });
     }
@@ -38,7 +38,7 @@ class RestaurantSource {
     } catch (e) {
       Notification.showNotification({
         title: 'Error',
-        text: e,
+        text: 'Gagal Memuat!, coba periksa koneksi internet anda',
         icon: 'error'
       });
     }
@@ -58,7 +58,7 @@ class RestaurantSource {
     } catch (e) {
       Notification.showNotification({
         title: 'Error',
-        text: e,
+        text: 'Gagal Memuat!, coba periksa koneksi internet anda',
         icon: 'error'
       });
     }
