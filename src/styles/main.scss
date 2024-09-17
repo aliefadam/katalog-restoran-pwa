@@ -781,6 +781,35 @@ main#main-content-detail {
 }
 // End Content Detail
 
+// Like Button
+#like-button-container button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc2626;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: none;
+  box-shadow: 1px 1px 5px rgba($color: $primary, $alpha: 0.5);
+  cursor: pointer;
+  transition: 200ms;
+
+  i {
+    font-size: 25px;
+    color: white;
+  }
+
+  &:hover {
+    transform: scale(105%);
+  }
+
+  &:active {
+    transform: scale(100%);
+  }
+}
+// End Like Button
+
 // Add Review
 #overlay-add-review {
   position: fixed;

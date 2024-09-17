@@ -280,6 +280,22 @@ const createAddReviewTemplate = () => {
   `;
 };
 
+const createLikeButtonTemplate = () => {
+  return `
+  <button aria-label="Tambahkan Restaurant ini ke favorit" id="btn-like" class="btn-like">
+    <i class="fa-regular fa-heart"></i>
+  </button>
+  `;
+};
+
+const createLikedButtonTemplate = () => {
+  return `
+  <button aria-label="Hapus Restaurant ini dari favorit" id="btn-like" class="btn-like">
+    <i class="fa-solid fa-heart"></i>
+  </button>
+  `;
+};
+
 export {
   createHeroSection,
   createRestaurantItemTemplate,
@@ -288,4 +304,6 @@ export {
   createRestaurantNotFoundTemplate,
   createRestaurantDetailLoadingIndicatorTemplate,
   createAddReviewTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };

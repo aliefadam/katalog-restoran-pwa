@@ -31,7 +31,7 @@ const AddReviewInitiator = {
   },
 
   _sendReview({ event, form, overlay, box }) {
-    event.stopPropagation();
+    event.preventDefault();
     const [inputNama, inputUlasan, submitButton] = form.elements;
     const newReviews = {
       id: this._restaurantId,
