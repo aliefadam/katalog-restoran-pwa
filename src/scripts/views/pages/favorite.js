@@ -1,13 +1,13 @@
-import FavoritRestaurantIDB from '../../data/favorite-restaurant-idb';
+import FavoritRestaurantIDB from "../../data/favorite-restaurant-idb";
 import {
   createBreadCrum,
   createEmptyFavoriteRestaurantTemplate,
   createRestauranLoadingIndicatorTemplate,
-  createRestaurantFavoriteTemplate
-} from '../templates/template-creator';
+  createRestaurantFavoriteTemplate,
+} from "../templates/template-creator";
 
 const Favorite = {
-  async render () {
+  async render() {
     return `
     <main id="main-content-favorite">
       ${createBreadCrum()}
@@ -17,32 +17,32 @@ const Favorite = {
       </section>
     </main>`;
   },
-  async afterRender () {
+  async afterRender() {
     this._showLoading();
     this._afterLoading();
   },
 
-  _showLoading () {
-    document.getElementById('main-favorite-list').innerHTML =
+  _showLoading() {
+    document.getElementById("main-favorite-list").innerHTML =
       createRestauranLoadingIndicatorTemplate();
   },
 
-  _afterLoading () {
+  _afterLoading() {
     setTimeout(async () => {
-      document.getElementById('main-favorite-list').innerHTML = '';
+      document.getElementById("main-favorite-list").innerHTML = "";
       await FavoritRestaurantIDB.getAllRestaurant().then((restaurants) => {
         if (restaurants.length === 0) {
-          document.getElementById('main-favorite-list').innerHTML =
+          document.getElementById("main-favorite-list").innerHTML =
             createEmptyFavoriteRestaurantTemplate();
         } else {
           restaurants.forEach((restaurant) => {
-            document.getElementById('main-favorite-list').innerHTML +=
+            document.getElementById("main-favorite-list").innerHTML +=
               createRestaurantFavoriteTemplate(restaurant);
           });
         }
       });
     }, 500);
-  }
+  },
 };
 
 export default Favorite;

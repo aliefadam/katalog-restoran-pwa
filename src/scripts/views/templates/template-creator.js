@@ -1,4 +1,4 @@
-import CONFIG from '../../global/config';
+import CONFIG from "../../global/config";
 
 const createHeroSection = () => {
   return `
@@ -71,7 +71,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
           .map((category, i) => {
             return `<span>${category.name}</span>`;
           })
-          .join('')}
+          .join("")}
       </div>
       <div class="location">
         <i class="fa-regular fa-location-dot"></i>
@@ -99,7 +99,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
               .map(({ name }) => {
                 return `<span>${name}</span>`;
               })
-              .join('')}
+              .join("")}
           </div>
           <h4>Minuman :</h4>
           <div class="menu-body-list">
@@ -107,7 +107,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
               .map(({ name }) => {
                 return `<span>${name}</span>`;
               })
-              .join('')}
+              .join("")}
           </div>
       </div>
     </div>
@@ -133,7 +133,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
               </div>
               `;
           })
-          .join('')}
+          .join("")}
       </div>
     </div>
   </div>
@@ -141,7 +141,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
 };
 
 const createRestauranLoadingIndicatorTemplate = () => {
-  let HTML = '';
+  let HTML = "";
   for (let i = 0; i < 6; i++) {
     HTML += `
     <div class="menu-item-loading">
@@ -360,5 +360,5 @@ export {
   createLikedButtonTemplate,
   createRestaurantFavoriteTemplate,
   createBreadCrum,
-  createEmptyFavoriteRestaurantTemplate
+  createEmptyFavoriteRestaurantTemplate,
 };
